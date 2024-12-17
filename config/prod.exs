@@ -18,11 +18,20 @@ config :logger, level: :info
 
 # Runtime production configuration, including reading
 # of environment variables, is done on config/runtime.exs.
-config :my_app, Btyard.Repo,
+config :btyard, Btyard.Repo,
   url: System.get_env("DATABASE_URL"),
   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
   ssl: true
 
-config :my_app, BtyardWeb.Endpoint,
+config :btyard, BtyardWeb.Endpoint,
   http: [:inet6, port: String.to_integer(System.get_env("PORT") || "4000")],
   secret_key_base: System.get_env("SECRET_KEY_BASE")
+
+config :btyard, btyardWeb.Endpoint,
+  url: [host: "btyard.com", port: 80],
+  cache_static_manifest: "priv/static/cache_manifest.json",
+  check_origin: [
+    "//btyard.com",
+    "//www.btyard.com",
+    "//btyard.gigalixirapp.com/"
+  ]

@@ -24,8 +24,8 @@ defmodule BtyardWeb.Router do
   # custom plug: verse
   def verse(conn, _opts) do
     verse = ~w(Matthew Mark Luke John)
-    assign(conn, :verse, verse)
-    # IO.inspect(conn)
+    conn = assign(conn, :verse, verse)
+    IO.inspect(conn)
   end
 
   scope "/", BtyardWeb do

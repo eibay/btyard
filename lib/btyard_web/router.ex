@@ -8,10 +8,16 @@ defmodule BtyardWeb.Router do
     plug :put_root_layout, html: {BtyardWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug :spy
   end
 
   pipeline :api do
     plug :accepts, ["json"]
+  end
+
+  # custom plug
+  def spy(conn, _opts) do
+    IO.inspect(conn)
   end
 
   scope "/", BtyardWeb do

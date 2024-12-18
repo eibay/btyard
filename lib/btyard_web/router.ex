@@ -9,21 +9,15 @@ defmodule BtyardWeb.Router do
     plug :protect_from_forgery
     plug :put_secure_browser_headers
     plug :verse
-    plug :spy
   end
 
   pipeline :api do
     plug :accepts, ["json"]
   end
 
-  # custom plug
-  def spy(conn, _opts) do
-    IO.inspect(conn)
-  end
-
   # custom plug: verse
   def verse(conn, _opts) do
-    verse = ~w(Matthew Mark Luke John)
+    verse = ~w(Matthew Mark Luke John) |> Enum.random()
     conn = assign(conn, :verse, verse)
     IO.inspect(conn)
   end

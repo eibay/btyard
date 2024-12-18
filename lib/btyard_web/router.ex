@@ -8,6 +8,7 @@ defmodule BtyardWeb.Router do
     plug :put_root_layout, html: {BtyardWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug :verse
     plug :spy
   end
 
@@ -18,6 +19,13 @@ defmodule BtyardWeb.Router do
   # custom plug
   def spy(conn, _opts) do
     IO.inspect(conn)
+  end
+
+  # custom plug: verse
+  def verse(conn, _opts) do
+    verse = ~w(Matthew Mark Luke John)
+    assign(conn, :verse, verse)
+    # IO.inspect(conn)
   end
 
   scope "/", BtyardWeb do

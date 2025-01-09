@@ -59,11 +59,11 @@ defmodule BtyardWeb.Router do
       live_dashboard "/dashboard", metrics: BtyardWeb.Telemetry
       forward "/mailbox", Plug.Swoosh.MailboxPreview
     end
+  end
 
-    scope "/soap", BtyardWeb do
-      get "/wsdl", SoapController, :wsdl
-      post "/handle_request", SoapController, :handle_request
-    end
+  scope "/soap", BtyardWeb do
+    get "/wsdl", SoapController, :wsdl
+    post "/handle_request", SoapController, :handle_request
   end
 
   ## Authentication routes

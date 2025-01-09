@@ -9,16 +9,26 @@ defmodule Btyard.MixProject do
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
-      # releases: [
-      #   your_app: [
-      #     include_executables_for: [:unix],
-      #     steps: [:assemble, :tar],
-      #     include_erts: true
-      #   ]
-      # ]
+      deps: deps(),
+      releases: [
+        btyard: [
+          include_executables_for: [:unix],
+          steps: [:assemble, :tar],
+          include_erts: true,
+          applications: [runtime_tools: :permanent]
+        ]
+      ]
     ]
   end
+
+  # defp releases do
+  #   [
+  #     my_app: [
+  #       steps: [:assemble, :tar],
+  #       applications: [runtime_tools: :permanent]
+  #     ]
+  #   ]
+  # end
 
   # Configuration for the OTP application.
   #

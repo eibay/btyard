@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
              xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-             xmlns:tns="http://example.com/soap"
-             targetNamespace="http://example.com/soap"
+             xmlns:tns="http://btyard.com/soap"
+             targetNamespace="http://btyard.com/soap"
              name="SoapService">
 
   <message name="GetUserRequest">
@@ -23,7 +23,7 @@
   <binding name="SoapServiceBinding" type="tns:SoapServicePortType">
     <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
     <operation name="GetUser">
-      <soap:operation soapAction="http://example.com/soap/GetUser"/>
+      <soap:operation soapAction="http://btyaard.com/soap/GetUser"/>
       <input>
         <soap:body use="literal"/>
       </input>

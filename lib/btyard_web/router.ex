@@ -18,13 +18,13 @@ defmodule BtyardWeb.Router do
     plug :accepts, ["json"]
   end
 
-  pipeline :redirect_if_user_is_authenticated do
-    plug BtyardWeb.Plugs.RedirectIfAuthenticated
-  end
+  # pipeline :redirect_if_user_is_authenticated do
+  #   plug BtyardWeb.Plugs.RedirectIfAuthenticated
+  # end
 
-  pipeline :require_authenticated_user do
-    plug BtyardWeb.Plugs.RequireAuthenticatedUser
-  end
+  # pipeline :require_authenticated_user do
+  #   plug BtyardWeb.Plugs.RequireAuthenticatedUser
+  # end
 
   # custom plug: verse
   def verse(conn, _opts) do

@@ -14,7 +14,7 @@ defmodule Btyard.MixProject do
         btyard: [
           include_executables_for: [:unix],
           steps: [:assemble, :tar],
-          include_erts: true,
+          include_certs: true,
           applications: [runtime_tools: :permanent]
         ]
       ]

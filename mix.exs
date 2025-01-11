@@ -9,15 +9,15 @@ defmodule Btyard.MixProject do
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps(),
-      releases: [
-        btyard: [
-          include_executables_for: [:unix],
-          steps: [:assemble, :tar],
-          include_certs: true,
-          applications: [runtime_tools: :permanent]
-        ]
-      ]
+      deps: deps()
+      # releases: [
+      #   btyard: [
+      #     include_executables_for: [:unix],
+      #     steps: [:assemble, :tar],
+      #     include_certs: true,
+      #     applications: [runtime_tools: :permanent]
+      #   ]
+      # ]
     ]
   end
 

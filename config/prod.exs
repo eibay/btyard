@@ -23,13 +23,14 @@ config :btyard, Btyard.Repo,
   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
   ssl: true
   # ssl: [cacertfile: "priv/certs/ca.pem"]
-# ssl_opts: [
-#   cacertfile: Path.expand("priv/certs/ca.pem")
-# ]
+  # ssl_opts: [
+  #   cacertfile: Path.expand("priv/certs/ca.pem")
+  # ]
 
 config :btyard, BtyardWeb.Endpoint,
   http: [:inet6, port: String.to_integer(System.get_env("PORT") || "4000")],
-  secret_key_base: System.get_env("SECRET_KEY_BASE")
+  secret_key_base: System.get_env("SECRET_KEY_BASE"),
+  server: true
 
 config :btyard, BtyardWeb.Endpoint,
   url: [host: "btyard.com", port: 80],

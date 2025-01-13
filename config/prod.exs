@@ -19,13 +19,13 @@ config :logger, level: :info
 # Runtime production configuration, including reading
 # of environment variables, is done on config/runtime.exs.
 config :btyard, Btyard.Repo,
-  url: System.get_env("DATABASE_URL"),
-  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
-  ssl: true,
-  ssl_opts: [
-    verify: :verify_none,
-    cacerts: :public_key.cacerts_get()
-  ]
+  # url: System.get_env("DATABASE_URL"),
+  # pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
+  # ssl: true,
+  # ssl_opts: [
+  #   verify: :verify_none,
+  #   cacerts: :public_key.cacerts_get()
+  # ]
   # ssl: [cacertfile: "priv/certs/ca.pem"]
   # ssl_opts: [
   #   cacertfile: Path.expand("priv/certs/ca.pem")
